@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import CoursesView from '../views/CoursesView.vue'
+import NotFoundView from '../views/NotFoundView.vue'
 
 
 const routes = [
@@ -13,19 +14,18 @@ const routes = [
   {
     path: '/courses',
     name: 'courses',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: CoursesView
   },
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: AboutView
   },
+  {
+    path: '/:CatchAll(.*)',
+    name: '404',
+    component: NotFoundView
+  }
 ]
 
 const router = createRouter({
