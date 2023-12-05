@@ -67,11 +67,15 @@ class UserController {
   }
 
   async check(req, res, next) {
-    const { email, password } = req.body
-    const token = jwt.sign({ email, password }, process.env.SECRET_KEY, {
-        expiresIn: "24h",
-      });
-      return res.json({ token });
+    // const { email, password } = req.body
+    // const token = jwt.sign({ email, password }, process.env.SECRET_KEY, {
+    //     expiresIn: "24h",
+    //   });
+    //   return res.json({ token });
+    res.json({
+      title: "greetings!",
+      message: "Hello from back!",
+    });
   }
 }
 
