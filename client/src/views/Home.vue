@@ -1,10 +1,10 @@
 <template>
+  <Header />
   <div class="mount">
     <div class="container">
       <p v-for="result in results">{{ result.title }}</p>
       <p v-for="result in results">{{ result.message }}</p>
       <p>{{ results.data }}</p>
-      <HelloWorld msg="Начало моей курсовой - это начало конца меня" />
       <p>{{ textFirst }}</p>
       <p>{{ textSecond }}</p>
       <p>{{ textThird }}</p>
@@ -12,10 +12,10 @@
       <p>{{ textFifth }}</p>
     </div>
   </div>
+  <Footer />
 </template>
 
 <script>
-import HelloWorld from "@/components/HelloWorld.vue";
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import { homePageAboutInfo } from "@/_config";
@@ -34,7 +34,6 @@ export default {
     };
   },
   components: {
-    HelloWorld,
     Header,
     Footer,
   },
@@ -62,5 +61,6 @@ p {
   font-family: "Montserrat";
   font-weight: 400;
   margin-top: 2px;
+  color: #fff;
 }
 </style>
