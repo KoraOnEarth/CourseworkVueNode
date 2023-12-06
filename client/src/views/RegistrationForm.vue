@@ -12,7 +12,7 @@
   </div> -->
   <div class="login-box">
     <h2>Регистрация</h2>
-    <form action="">
+    <form @submit.prevent>
       <div class="user-box">
         <input type="text" required />
         <label for="">Ваш псевдоним<span class="small_text">*</span></label>
@@ -24,6 +24,10 @@
       <div class="user-box">
         <input type="password" required />
         <label for="">Ваш пароль<span class="small_text">*</span></label>
+      </div>
+      <div class="user-box">
+        <input type="password" required />
+        <label for="">Подтвердите пароль<span class="small_text">*</span></label>
       </div>
       <div class="user-box">
         <input type="text" required />
@@ -42,10 +46,17 @@
         </a>
       </div>
     </form>
+    <div class="display_center" style="margin-top: 20px;">
+      <p>Есть аккаунт? <router-link to="/login">Войти!</router-link></p>
+    </div>
   </div>
 </template>
 
 <script>
+import {ref} from 'vue'
+const email = ref('')
+const password = ref('')
+
 export default {
   name: "LoginFormView",
   data() {
@@ -101,6 +112,16 @@ body {
   flex-wrap: wrap;
   align-content: center;
 }
+
+.display_center p {
+  color: white;
+}
+
+.display_center a {
+  color: white;
+  text-decoration: none;
+}
+
 
 .login-box .user-box {
   position: relative;

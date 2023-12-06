@@ -12,13 +12,13 @@
   </div> -->
   <div class="login-box">
     <h2>Авторизация</h2>
-    <form action="">
+    <form @submit.prevent>
       <div class="user-box">
-        <input type="text" required />
+        <input type="text" v-model="email" required />
         <label for="">Ваша почта</label>
       </div>
       <div class="user-box">
-        <input type="password" required />
+        <input type="password" v-model="password" required />
         <label for="">Ваш пароль</label>
       </div>
       <div class="display_center">
@@ -29,11 +29,20 @@
           <span></span>Отправить
         </a>
       </div>
+      
     </form>
+    <div class="display_center" style="margin-top: 20px;">
+      <p>Нет аккаунта? <router-link to="/registrationForm">Зарегистрируйтесь!</router-link></p>
+    </div>
+    
   </div>
 </template>
 
 <script>
+import {ref} from 'vue'
+const email = ref('')
+const password = ref('')
+
 export default {
   name: "LoginFormView",
   data() {
@@ -82,6 +91,15 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
+}
+
+.display_center p {
+  color: white;
+}
+
+.display_center a {
+  color: white;
+  text-decoration: none;
 }
 
 .login-box .user-box {
