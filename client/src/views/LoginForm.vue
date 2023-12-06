@@ -23,11 +23,11 @@
       </div>
       <div class="display_center">
         <a href="">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>Отправить
-      </a>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>Отправить
+        </a>
       </div>
     </form>
   </div>
@@ -77,7 +77,7 @@ body {
   text-align: center;
 }
 
-.display_center{
+.display_center {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

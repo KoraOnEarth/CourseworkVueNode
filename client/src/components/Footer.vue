@@ -26,7 +26,7 @@ export default {
   position: relative;
   width: 100%;
   padding: 1.3rem 10%;
-  background: rgba(0,0,0,.4);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(20px);
   display: flex;
   justify-content: center;
@@ -34,7 +34,7 @@ export default {
   z-index: 100;
   margin-top: 80px;
 }
-.navbar a{
+.navbar a {
   font-size: 1.15rem;
   color: #fff;
   text-decoration: none;

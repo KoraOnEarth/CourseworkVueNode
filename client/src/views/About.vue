@@ -21,7 +21,7 @@
       </div>
     </div>
   </div>
-  <Footer/>
+  <Footer />
 </template>
 
 <script>
@@ -30,7 +30,7 @@ import Footer from "@/components/Footer.vue";
 export default {
   components: {
     Header,
-    Footer
+    Footer,
   },
 };
 </script>
@@ -55,7 +55,7 @@ ul {
   list-style-type: none;
 }
 
-li{
+li {
   padding-top: 3px;
 }
 </style>

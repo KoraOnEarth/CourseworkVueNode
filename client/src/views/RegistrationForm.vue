@@ -18,7 +18,7 @@
         <label for="">Ваш псевдоним<span class="small_text">*</span></label>
       </div>
       <div class="user-box">
-        <input type="email" required />
+        <input type="text" required />
         <label for="">Ваша почта<span class="small_text">*</span></label>
       </div>
       <div class="user-box">
@@ -35,13 +35,12 @@
       </div>
       <div class="display_center">
         <a href="">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>Отправить
-      </a>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>Отправить
+        </a>
       </div>
-      
     </form>
   </div>
 </template>
@@ -96,7 +95,7 @@ body {
   color: red;
 }
 
-.display_center{
+.display_center {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
