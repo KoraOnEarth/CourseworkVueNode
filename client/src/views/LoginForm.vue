@@ -12,7 +12,7 @@
         <label for="">Ваш пароль</label>
       </div>
       <div class="display_center">
-        <a @click="signUp">
+        <a @click="LogIn">
           <span></span>
           <span></span>
           <span></span>
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-  import axios from 'axios';
+  import { login } from '@/http/userAPI';
 
   export default {
     name: 'LoginFormView',
@@ -41,18 +41,12 @@
       };
     },
     methods: {
-      async signUp() {
-        const result = await axios.post(
-          'http://localhost:5000/api/user/login',
-          {
-            email: this.email,
-            password: this.password,
-          }
-        );
-        console.warn(result)
-        if (result.status == 200){
-          alert("Залогинен")
-          localStorage.setItem("user-info", JSON.stringify(result.data))
+      async LogIn() {
+        const result = await login(this.email, this.password);
+        console.warn(result);
+        if (result.status == 200 && result.data.length > 0) {
+          alert('Залогинен');
+          localStorage.setItem('user-info', JSON.stringify(result.data[0]));
         }
       },
     },

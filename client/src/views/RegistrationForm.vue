@@ -49,7 +49,7 @@
   import { ref } from 'vue';
   const email = ref('');
   const password = ref('');
-
+  import { registration } from '@/http/userAPI';
   export default {
     name: 'LoginFormView',
     data() {
@@ -64,21 +64,18 @@
     },
     methods: {
       async onRegistration() {
-        try {
-          const result = await axios.post('http://localhost:5000/api/user/registration', {
-            nickname: this.nickname,
-            email: this.email,
-            password: this.password,
-            confirmPassword: this.confirmPassword,
-            name: this.name,
-            surname: this.surname,
-          });
-          if(result.status == 200){
-            alert("Спасибо за регистрацию! \nТеперь вы имеете доступ к курсам")
-          }
-        } catch (e) {
-          console.log(e);
+        const result = await registration(
+          this.nickname,
+          this.email,
+          this.password,
+          this.confirmPassword,
+          this.name,
+          this.surname
+        );
+        if (result.status == 201) {
+          alert('Спасибо за регистрацию! \nТеперь вы имеете доступ к курсам');
         }
+        console.warn(result);
       },
     },
   };
